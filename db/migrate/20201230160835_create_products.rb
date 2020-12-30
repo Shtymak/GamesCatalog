@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.string :body
       t.integer :price
       t.integer :size
-      t.string :country
+      t.string :county
 
       t.timestamps
     end
