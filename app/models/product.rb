@@ -7,5 +7,5 @@ class Product < ApplicationRecord
     else
         "/nfd.jpg"
     end
-end
+  end
 end

@@ -1,5 +1,4 @@
-<div class="row">
-<h2><%=link_to "All Games", products_path%></h2>
+<div class="">
   <h2>
       Name: <%=@product.name%>
     </h2>
@@ -17,3 +16,4 @@
     </h3>
     <%= image_tag @product.photo, width:300 %>
 </div>
+<span class="p-2 text-dark"><%= link_to 'All Games', products_path, :class => 'btn btn-warning' %></span>
