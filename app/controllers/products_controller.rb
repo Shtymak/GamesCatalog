@@ -5,8 +5,9 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all.with_attached_image
+    @products = Product.order(:name).page(params[:page]).per(10).with_attached_image
   end
+
   def create
     @product = Product.new(product_params)
     if product.save

@@ -26,7 +26,7 @@ show do
       row :size
       row :county
       row :image do |object|
-        image_tag object.image
+        image_tag object.photo
       end
     end
     active_admin_comments
