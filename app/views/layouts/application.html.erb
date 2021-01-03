@@ -12,7 +12,15 @@
         <p class="h5 my-0 me-md-auto fw-normal"><%= link_to 'Games Store', root_path, :class => "btn btn-light"%> <%= link_to 'Products', products_path, :class => "btn btn-light"%>
         </p>
         <nav class="my-2 my-md-0 me-md-3">
-        </nav>
+        <%= form_tag search_path, method: :get, class: "navbar-form navbar-left search-form" do %>
+        <%= text_field_tag(
+      :search,
+      params[:search],
+      placeholder: "Search",
+      class: "form-control"
+  ) %>
+<% end %>
+</nav>
         <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->
       </header>
   </head>

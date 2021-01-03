@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  
+
   def show
     product
   end
@@ -15,6 +15,12 @@ class ProductsController < ApplicationController
             pp 'Error'
           end
   end
+
+  def search
+      @search = params[:search]
+      @products = Product.where("name LIKE '%#{params[:search]}%'")
+    end
+
   private
   def product_params
     params.require(:product).permit(:name, :image,:body, :price, :size, :county)

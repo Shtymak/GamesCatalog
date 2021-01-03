@@ -1,4 +1,10 @@
 <div class="col-6">
-  <h2><%=link_to product.name, product_path(product),:class => 'btn btn-light"'%></h2>
+  <%=link_to product_path(product) do%>
+  <p>
+  <div class='btn btn-light'>
+      <%=product.name %>
+  </div>
+</p>
   <%= image_tag product.photo, width:300 %>
+  <%end%>
 </div>
