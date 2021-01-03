@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def search
       @search = params[:search]
-      @products = Product.where("name LIKE '%#{params[:search]}%'")
+      @products = Product.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'")
     end
 
   private
