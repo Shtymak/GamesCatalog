@@ -5,10 +5,11 @@ ActiveAdmin.register Product do
 
   #Uncomment all parameters which should be permitted for assignment
 
-  permit_params :name, :body, :price, :size, :county, :image
+  permit_params :name, :body, :price, :size, :county,:category_names, :image
   form do |f|
     f.inputs do
       f.input :name
+      f.input :category_names
       f.input :body, as: :text
       f.input :price
       f.input :size
@@ -26,7 +27,13 @@ show do
       row :size
       row :county
       row :image do |object|
-        image_tag object.photo
+        image_tag object.photo, width:250
+      end
+    end
+    panel 'Categories' do
+      table_for product.categories do
+        column :id
+        column { |c| link_to c.name, admin_category_path(c.id) }
       end
     end
     active_admin_comments
