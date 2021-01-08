@@ -1,5 +1,4 @@
 <div class="col-6">
-
   <%=link_to product_path(product) do%>
   <p>
   <div class='btn btn-light'>
@@ -8,4 +7,9 @@
 </p>
   <%= image_tag product.photo, width:300 %>
   <%end%>
+  <p>
+    <%product.categories.each do |category|%>
+      <%=link_to  category.name, category_path(category), class: "badge bg-secondary"%>
+    <%end%>
+  </p>
 </div>
