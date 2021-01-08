@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.order(:name).page(params[:page]).per(10).with_attached_image
+    @products = Product.order(:name).page(params[:page]).per($PERPAGE).with_attached_image
   end
 
   def create
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def search
       @search = params[:search]
-      @products = Product.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'")
+      @products = Product.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'").page(params[:page]).per($PERPAGE).with_attached_image
     end
 
   private
