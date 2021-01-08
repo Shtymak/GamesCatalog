@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   resources :products
   get :search, to: 'products#search'
+  resources :categories, only: %i[index show]
 end

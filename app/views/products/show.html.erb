@@ -14,6 +14,11 @@
     <h3>
       Country: <%=@product.county%>
     </h3>
+    <h3>Categories:
+      <%products.categories.each do |category|%>
+      
+      <%end%>
+    </h3>
     <%= image_tag @product.photo, width:300 %>
 </div>
 <span class="p-2 text-dark"><%= link_to 'All Games', products_path, :class => 'btn btn-warning' %></span>
