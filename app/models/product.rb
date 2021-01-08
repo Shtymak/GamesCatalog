@@ -18,7 +18,7 @@ class Product < ApplicationRecord
     category_products.delete_all
     names.split(',').map(&:strip).uniq.each do |category_name|
       category_id = Category.find_or_create_by(name: category_name.to_s.downcase).id
-      CategoryProduct.create(product_id: id, category_id: category_id)
+      CategoryProduct.create(product: self, category_id: category_id)
     end
   end
 
