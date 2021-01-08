@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   end
   def show
    @category = Category.find(params[:id])
-   products = @category.products
+   @products = @category.products
+   @products =  @products.page(params[:page]).per($PERPAGE).with_attached_image.includes(:categories)
  end
 end

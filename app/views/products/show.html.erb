@@ -15,8 +15,8 @@
       Country: <%=@product.county%>
     </h3>
     <h3>Categories:
-      <%products.categories.each do |category|%>
-      
+      <%@product.categories.each do |category|%>
+      <%=link_to  category.name, category_path(category), class: "badge bg-secondary"%>
       <%end%>
     </h3>
     <%= image_tag @product.photo, width:300 %>
