@@ -18,8 +18,10 @@ class ProductsController < ApplicationController
   end
 
   def search
-      @search = params[:search]
-      @products = Product.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'").page(params[:page]).per($PERPAGE).with_attached_image
+    @search = params[:search]
+    @filter = params[:filter]
+    @products = @filter == '' ? Product.all : Product.where("price <= ?", @filter.to_i)
+    @products = @products.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'").page(params[:page]).per($PERPAGE).with_attached_image
     end
 
   private

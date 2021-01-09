@@ -20,6 +20,7 @@
       placeholder: "Search",
       class: "form-control"
   ) %>
+  Price limit: <%= select_tag "filter", options_for_select(['1', '10', '15', '25', '49', '100'], @filter), onchange:"clickSubmit();", class: 'custom-select', prompt: 'Select price filter' %>
 <% end %>
 </nav>
         <!-- <a class="btn btn-outline-primary" href="#">Sign up</a> -->

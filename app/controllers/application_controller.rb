@@ -1,3 +1,3 @@
 class ApplicationController < ActionController::Base
-  $PERPAGE = 6
+  $PERPAGE = 2
 end
