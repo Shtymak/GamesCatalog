@@ -1,7 +1,12 @@
-<h1>Результати пошуку за "<%= @search %>" and "<%=@filter%>"
+<%if @search!='' || @filter != ''%>
+<h1>Результати пошуку за <%= @search %>
+  <%if @filter != ''%>
+      ціною менше <%=@filter%>$
+      <%end%>
 </h1>
-<h5>Кількість результатів:
+  <h5>Кількість результатів:
   <%= @products.count %></h5>
+  <%end%>
 <div class="row">
   <%= render @products%>
 </div>
