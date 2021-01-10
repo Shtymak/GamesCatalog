@@ -5,7 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.order(:name).page(params[:page]).per($PERPAGE).with_attached_image
+    @products = Product.order(:name)
+    paginate
   end
 
   def create
@@ -17,14 +18,25 @@ class ProductsController < ApplicationController
           end
   end
 
+
   def search
-    @search = params[:search]
-    @filter = params[:filter]
-    @products = @filter == '' ? Product.all : Product.where("price <= ?", @filter.to_i)
-    @products = @products.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'").page(params[:page]).per($PERPAGE).with_attached_image
-    end
+      @search = params[:search]
+    filter
+      @products = @products.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'")
+    paginate
+  end
 
   private
+
+  def paginate
+    @products = @products.page(params[:page]).per($PERPAGE).with_attached_image
+  end
+
+  def filter
+    @filter = params[:filter]
+    @products = @filter == '' ? Product.all : Product.where("price <= ?", @filter.to_i)
+  end
+
   def product_params
     params.require(:product).permit(:name, :image,:body, :price, :size, :county, categories:[])
   end
