@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
       @search = params[:search]
     filter
       @products = @products.where("name LIKE '%#{params[:search]}%' OR body LIKE '%#{params[:search]}%'")
+@count = @products.count
     paginate
   end
 

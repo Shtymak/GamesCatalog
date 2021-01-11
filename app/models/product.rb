@@ -13,6 +13,13 @@ class Product < ApplicationRecord
     end
   end
 
+  def set_image=(src)
+    file = URI.parse(src).open
+    image.attach(io: file, filename: name)
+  rescue OpenURI::HTTPError => e
+    pp e
+  end
+
 
   def category_names=(names)
     category_products.delete_all
