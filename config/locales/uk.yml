@@ -12,3 +12,24 @@ uk:
       price: "Ціна"
   categories:
     title: "Перелік категорій"
+  views:
+    pagination:
+      next: "Наступна"
+      last: "Остання"
+      first: "Перша"
+      previous: "Попередня"
+  product:
+    show:
+      name: "Назва"
+      body: "Опис"
+      price: "Ціна"
+      price_unit: "грн"
+      size: "Розмір"
+      size_unit: "ГБ"
+      county: "Країна"
+      categories: "Категорії"
+      button: "Всі ігри"
+  search:
+    title: "Результати пошуку за"
+    price: "ціною менше"
+    count: "Кількість результатів"

@@ -1,10 +1,10 @@
 <%if @search!='' || @filter != ''%>
-<h1>Результати пошуку за <%= @search %>
+<h1><%=t('search.title')%> <%= @search %>
   <%if @filter != ''%>
-      ціною менше <%=@filter%>$
+      <%=t('search.price')%> <%=@filter%>$
       <%end%>
 </h1>
-  <h5>Кількість результатів:
+  <h5><%=t('search.count')%>:
   <%= @count %></h5>
   <%end%>
 <div class="row">

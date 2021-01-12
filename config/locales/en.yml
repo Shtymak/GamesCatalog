@@ -43,3 +43,24 @@ en:
       price: "Price"
   categories:
     title: "Categories"
+  views:
+    pagination:
+      next: "Next"
+      last: "Last"
+      first: "First"
+      previous: "Previous"
+  product:
+    show:
+      name: "Name"
+      body: "About"
+      price: "Price"
+      price_unit: "grn"
+      size: "Size"
+      size_unit: "Gb"
+      county: "Country"
+      categories: "Categories"
+      button: "All games"
+  search:
+    title: "Search result for"
+    price: "price less then"
+    count: "Number of results"

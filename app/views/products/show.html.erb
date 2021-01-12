@@ -1,24 +1,24 @@
 <div class="">
   <h2>
-      Name: <%=@product.name%>
+      <%=t('product.show.name')%>: <%=@product.name%>
     </h2>
     <h3>
-      About: <%=@product.body%>
+      <%=t('product.show.body')%>: <%=@product.body%>
     </h3>
     <h3>
-      Price: <%=@product.price%> $
+      <%=t('product.show.price')%>: <%=@product.price%> <%=t('product.show.price_unit')%>
     </h3>
     <h3>
-    Size: <%=@product.size%> GB
+    <%= t('product.show.size')%>: <%=@product.size%> <%=t('product.show.size_unit')%>
     </h3>
     <h3>
-      Country: <%=@product.county%>
+      <%=t('product.show.county')%>: <%=@product.county%>
     </h3>
-    <h3>Categories:
+    <h3><%=t('product.show.categories')%>:
       <%@product.categories.each do |category|%>
       <%=link_to  category.name, category_path(category), class: "badge bg-secondary"%>
       <%end%>
     </h3>
     <%= image_tag @product.photo, width:300 %>
 </div>
-<span class="p-2 text-dark"><%= link_to 'All Games', products_path, :class => 'btn btn-warning' %></span>
+<span class="p-2 text-dark"><%= link_to t('product.show.button'), products_path, :class => 'btn btn-warning' %></span>
