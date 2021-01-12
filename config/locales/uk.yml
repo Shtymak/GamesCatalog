@@ -1,0 +1,14 @@
+uk:
+  main:
+    title: "Ігровий магазин"
+  navbar:
+    title:
+      main: "Магазин ком'ютерних ігор"
+      products: "Всі ігри"
+      categories: "Категорії"
+    search:
+      placeholder: "Пошук"
+    select:
+      price: "Ціна"
+  categories:
+    title: "Перелік категорій"

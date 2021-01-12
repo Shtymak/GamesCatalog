@@ -110,6 +110,7 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
+    http_accept_language (2.1.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.12.0)
@@ -270,6 +271,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   faker
+  http_accept_language
   jbuilder (~> 2.7)
   kaminari
   pg

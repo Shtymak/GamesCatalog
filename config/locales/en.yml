@@ -30,4 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  main:
+    title: "Games store"
+  navbar:
+    title:
+      main: "Games Store"
+      products: "All Games"
+      categories: "Categories"
+    search:
+      placeholder: "Search"
+    select:
+      price: "Price"
+  categories:
+    title: "Categories"
