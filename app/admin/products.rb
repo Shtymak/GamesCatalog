@@ -4,6 +4,21 @@ ActiveAdmin.register Product do
   #https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
   #Uncomment all parameters which should be permitted for assignment
+  action_item :import, except: :import do
+   link_to t('import'), admin_products_import_path
+ end
+
+ controller do
+    def import; end
+
+    def import_file
+      Product.import(params[:file])
+      redirect_to admin_products_path
+    end
+  end
+
+
+
 
   permit_params :name, :body, :price, :size, :county,:category_names, :image
   form do |f|
@@ -13,7 +28,7 @@ ActiveAdmin.register Product do
       f.input :body, as: :text
       f.input :price
       f.input :size
-      f.input :county
+      f.input :county, label: "Country"
       f.input :image, as: :file
     end
   f.actions

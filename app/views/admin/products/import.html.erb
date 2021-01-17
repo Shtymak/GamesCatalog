@@ -1,0 +1,4 @@
+<%= form_tag admin_products_import_path, multipart: true, method: :post do %>
+<%= file_field_tag :file %>
+<%= submit_tag "import" %>
+<% end %>

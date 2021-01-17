@@ -1,4 +1,7 @@
 uk:
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
   main:
     title: "Ігровий магазин"
   navbar:
