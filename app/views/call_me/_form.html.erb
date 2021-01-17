@@ -1,0 +1,5 @@
+<%= form_for CallMe.new, url: call_me_path do |f| %>
+  <%= f.text_field :phone %>
+
+  <%= f.submit "Call me!"%>
+<% end %>

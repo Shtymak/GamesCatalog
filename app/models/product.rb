@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   has_many :category_products
   has_many :categories, through: :category_products
 
-  validates :name, presence: true, length: { minimum: 3, maximum:18 }
+  validates :name, uniqueness: true, presence: true, length: { minimum: 3, maximum:18 }
   validates :body, presence: true, length: { maximum: 400 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 1, only_integer: true }
   validates :size, presence: true, numericality: { greater_than_or_equal_to: 1 }

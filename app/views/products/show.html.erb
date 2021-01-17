@@ -21,4 +21,9 @@
     </h3>
     <%= image_tag @product.photo, width:300 %>
 </div>
-<span class="p-2 text-dark"><%= link_to t('product.show.button'), products_path, :class => 'btn btn-warning' %></span>
+<div class="call_me">
+  <p class="p-2 text-dark">
+    <%=render "call_me/form"%>
+  </p>
+</div>
+<span class="p-2 text-dark"><%= link_to t('product.show.button'), products_path, :class => 'btn btn-warning' %> </span>
