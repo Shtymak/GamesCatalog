@@ -8,6 +8,10 @@
   <%= @count %></h5>
   <%end%>
 <div class="row">
-  <%= render @products%>
+  <%if @products.count>0%>
+  <%=@products.each do |product|%>
+    <%= render ProductComponent.new(product: product)%>
+  <%end%>
+  <%end%>
 </div>
 <%=paginate @products%>

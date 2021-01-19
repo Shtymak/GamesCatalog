@@ -1,0 +1,12 @@
+<div class="col-6">
+  <%=link_to product_path(@product) do%>
+      <h3><%=@product.name %></h3>
+  <%= image_tag @product.photo, width:200, height:200 %>
+  <%end%>
+  <p>
+    Categories:
+    <%@product.categories.each do |category|%>
+      <%=link_to  category.name, category_path(category), class: ""%>
+    <%end%>
+  </p>
+</div>

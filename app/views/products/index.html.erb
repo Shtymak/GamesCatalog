@@ -1,6 +1,8 @@
 <div>
     <div class="row">
-        <%= render @products%>
+      <%=@products.each do |product|%>
+        <%= render ProductComponent.new(product: product)%>
+      <%end%>
     </div>
       <%=paginate @products%>
 </div>
