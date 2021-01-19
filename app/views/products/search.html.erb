@@ -9,9 +9,7 @@
   <%end%>
 <div class="row">
   <%if @products.count>0%>
-  <%=@products.each do |product|%>
-    <%= render ProductComponent.new(product: product)%>
-  <%end%>
+    <%=render ProductComponent.with_collection(@products)%>
   <%end%>
 </div>
 <%=paginate @products%>

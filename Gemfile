@@ -60,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 gem 'pg'
 gem "view_component", require: "view_component/engine"
+gem "telegram-bot-ruby"

@@ -1,6 +1,6 @@
 <h1><%=@category.name%></h1>
 <div class="row" id="products">
 
-  <%= render @products%>
+  <%= render ProductComponent.with_collection(@products)%>
 <%= paginate @products%>
 </div>
